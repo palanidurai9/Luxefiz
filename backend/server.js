@@ -1,17 +1,16 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import nodemailer from "nodemailer";
-import express from "express"
+const express = require("express")
+const cors = require("cors")
+const dotenv = require("dotenv")
+const nodemailer = require("nodemailer")
 
-dotenv.config();
-const app = express();
+dotenv.config()
+const app = express()
 
-app.use(cors({ origin: "*" }));
-app.use(express.json());
+app.use(cors({ origin: "*" }))
+app.use(express.json())
 
 app.post("/api/contact", async (req, res) => {
-  const { name, email, subject, message } = req.body;
+  const { name, email, subject, message } = req.body
 
   try {
     const transporter = nodemailer.createTransport({
@@ -20,7 +19,7 @@ app.post("/api/contact", async (req, res) => {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
-    });
+    })
 
     const mailOptions = {
       from: email,
@@ -32,16 +31,15 @@ app.post("/api/contact", async (req, res) => {
         Subject: ${subject}
         Message: ${message}
       `,
-    };
+    }
 
-    await transporter.sendMail(mailOptions);
-    res.status(200).json({ success: true, message: "Email sent successfully!" });
-
+    await transporter.sendMail(mailOptions)
+    res.status(200).json({ success: true, message: "Email sent successfully!" })
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false, message: "Failed to send email." });
+    console.error(error)
+    res.status(500).json({ success: false, message: "Failed to send email." })
   }
-});
+})
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
