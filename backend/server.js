@@ -9,6 +9,11 @@ const app = express()
 app.use(cors({ origin: "*" }))
 app.use(express.json())
 
+// ✅ add this
+app.get("/", (req, res) => {
+  res.send("Backend Running ✅");
+});
+
 app.post("/api/contact", async (req, res) => {
   const { name, email, subject, message } = req.body
 
