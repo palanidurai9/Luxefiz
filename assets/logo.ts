@@ -10,8 +10,6 @@ export const Logo: React.FC<{ className?: string }> = ({ className }) =>
     React.createElement('img', {
       src: '/image/luxefiz-logo.png',
       alt: 'Luxefiz Logo - Creative Digital Agency in Tamil Nadu',
-      loading: 'eager', // 👈 change from lazy → eager
-      decoding: 'async', // ⚡ helps rendering faster
       className: 'w-12 h-12 object-contain',
     })
     ,
