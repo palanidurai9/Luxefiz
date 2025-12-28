@@ -10,6 +10,7 @@ import TestimonialsPage from './pages/TestimonialsPage';
 import ProcessPage from './pages/ProcessPage';
 import ContactPage from './pages/ContactPage';
 import BackToTopButton from './components/BackToTopButton';
+import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -34,6 +35,7 @@ const App: React.FC = () => {
       </main>
       <Footer />
       <BackToTopButton />
+      <FloatingWhatsAppButton />
     </div>
   );
 };

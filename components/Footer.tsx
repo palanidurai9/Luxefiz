@@ -14,24 +14,25 @@ const Footer: React.FC = () => {
           {/* About */}
           <div className="col-span-1">
             <Link to="/">
-                <div className="font-playfair font-black text-3xl">
-                    <span className="text-white">Luxe</span>
-                    <span className="text-brand-pink">fiz</span>
-                </div>
+              <div className="font-playfair font-black text-3xl">
+                <span className="text-white">Luxe</span>
+                <span className="text-brand-pink">fiz</span>
+              </div>
             </Link>
-            <p className="mt-4 text-gray-400">
-              Marketing with Class, Easy on Cash. 
-              <br />
-              Luxury-quality digital marketing, web, and SaaS solutions made affordable.
+            <p className="mt-4 text-gray-400 font-medium">
+              Marketing with Class, Easy on Cash.
+            </p>
+            <p className="mt-2 text-gray-400 text-sm leading-relaxed">
+              Luxefiz builds professional websites and online presence systems designed for business growth and visibility, helping companies be discoverable by customers searching online.
             </p>
             <p className="mt-4 text-gray-400">
               Contact us: <a href="mailto:info@luxefiz.com" className="text-brand-pink hover:underline">info@luxefiz.com</a>
             </p>
             <span className="text-xs text-gray-400">
-            Udyam Registered MSME — UDYAM-TN-25-0049904
+              Udyam Registered MSME — UDYAM-TN-25-0049904
             </span>
           </div>
-          
+
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-bold">Quick Links</h3>
@@ -42,7 +43,7 @@ const Footer: React.FC = () => {
               <li><Link to="/contact" className="text-gray-400 hover:text-white transition">Contact</Link></li>
             </ul>
           </div>
-          
+
           {/* Social */}
           <div>
             <h3 className="text-lg font-bold">Connect With Us</h3>
