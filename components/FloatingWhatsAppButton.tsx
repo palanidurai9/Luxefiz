@@ -5,7 +5,7 @@ const FloatingWhatsAppButton: React.FC = () => {
     const [isHovered, setIsHovered] = useState(false);
 
     // Config
-    const phoneNumber = "6282839617"; // Derived from Footer.tsx
+    const phoneNumber = "916382839617"; // Derived from Footer.tsx
     const message = "Hi Luxefiz, I’m looking for a professional business website. Can we discuss?";
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
               <a href="https://www.linkedin.com/company/luxefiz/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-pink transition"><LinkedInIcon /></a>
               <a href="https://instagram.com/luxefiz" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-pink transition"><InstagramIcon /></a>
               <a href="https://www.youtube.com/@luxefiz" aria-label="YouTube" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-pink transition"><YouTubeIcon /></a>
-              <a href="https://api.whatsapp.com/send?phone=6282839617" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-pink transition"><WhatsAppIcon /></a>
+              <a href="https://api.whatsapp.com/send?phone=916382839617" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-pink transition"><WhatsAppIcon /></a>
             </div>
             <br></br>
             <p className="text-gray-400">Follow us on social media for updates!</p>
