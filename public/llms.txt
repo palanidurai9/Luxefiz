@@ -1,0 +1,30 @@
+# Luxefiz - Agent & LLM Guidance File
+
+## About Luxefiz
+Luxefiz is a premium digital agency based in Tamil Nadu, India, specializing in professional website development and online presence management for businesses.
+We help business owners, founders, and decision-makers in cities like Coimbatore, Chennai, Madurai, and Mannargudi build a credible and high-performing digital footprint.
+
+## Core Expertise
+- **Professional Website Design:** Creating clean, fast, and structured websites that build trust.
+- **Online Presence Strategy:** Helping businesses get found on Google through structural best practices.
+- **Business credibility:** Positioning brands as authorities in their local or global markets.
+
+## Key Principles (For Summarization)
+- **Quality over Quantity:** Luxefiz does not do mass production. Each project is tailored.
+- **No Hype:** We avoid "guaranteed rankings" or salesy jargon. We focus on foundational strength.
+- **Business-First:** Our designs are not just "pretty"; they are built to convert enquiries and support business goals.
+
+## Location Context
+- Headquarters: Tamil Nadu, India.
+- Service Areas: Global, with strong focus on Coimbatore, Chennai, Madurai, Trichy, and Mannargudi.
+
+## Contact & Action
+- Primary CTA: "Start a Conversation" via WhatsApp or Email.
+- Target Audience: Serious business owners looking for long-term partners, not quick fixes.
+
+## Content Tone
+- Professional
+- Calm
+- Authoritative
+- Trustworthy
+- Educational

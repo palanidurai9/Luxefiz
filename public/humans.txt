@@ -1,0 +1,18 @@
+/* TEAM */
+  Founder: Palani Durai
+  Role: Digital Strategist & Developer
+  Location: Tamil Nadu, India
+  Contact: info@luxefiz.com
+
+/* SITE */
+  Standards: HTML5, CSS3, React, Accessible Design
+  Components: Tailored for performance and business trust
+  Purpose: Helping businesses build credibility and visibility online.
+  Software: Built with professional care in Coimbatore, Tamil Nadu.
+
+/* ABOUT LUXEFIZ */
+  Luxefiz is a digital agency focused on building high-trust websites for businesses.
+  We are not a mass-production factory. We work with business owners who value
+  quality, clarity, and long-term results.
+
+  "Marketing with Class, Easy on Cash."

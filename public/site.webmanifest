@@ -1,18 +1,29 @@
 {
-    "name": "Luxefiz",
-    "short_name": "Luxefiz",
-    "description": "Modern digital marketing & creative tech company delivering premium-class brand experiences without premium pricing stress.",
-    "icons": [
-      {
-        "src": "/android-chrome-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "any maskable"
-      }
-    ],
-    "theme_color": "#000000",
-    "background_color": "#ffffff",
-    "display": "standalone",
-    "start_url": "/"
-  }
-  
+  "name": "Luxefiz | Professional Website Development & Digital Presence",
+  "short_name": "Luxefiz",
+  "description": "Luxefiz builds professional websites and trusted online presence systems for businesses in Tamil Nadu. We focus on clarity, credibility, and long-term business growth.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2B1F2F",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": [
+    "business",
+    "productivity",
+    "technology"
+  ],
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
