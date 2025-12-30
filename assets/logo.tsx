@@ -15,8 +15,8 @@ loading = "eager"
 
   {/* Text elements */ }
   < div >
-  <span className="text-brand-purple" > Luxe </span>
-    < span className = "text-brand-pink" > fiz </span>
+  <span className="text-brand-purple" > Luxe</span>
+    < span className = "text-brand-pink" >fiz </span>
       </div>
       </div>
 );
