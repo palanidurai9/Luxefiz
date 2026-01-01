@@ -19,18 +19,18 @@ const Footer: React.FC = () => {
                 <span className="text-brand-pink">fiz</span>
               </div>
             </Link>
-            <p className="mt-4 text-gray-400 font-medium">
-              Marketing with Class, Easy on Cash.
-            </p>
-            <p className="mt-2 text-gray-400 text-sm leading-relaxed">
-              Luxefiz builds professional websites and online presence systems designed for business growth and visibility, helping companies be discoverable by customers searching online.
-            </p>
-            <p className="mt-4 text-gray-400">
-              Contact us: <a href="mailto:info@luxefiz.com" className="text-brand-pink hover:underline">info@luxefiz.com</a>
-            </p>
-            <span className="text-xs text-gray-400">
-              Udyam Registered MSME — UDYAM-TN-25-0049904
-            </span>
+            <div className="mt-6 space-y-2 text-gray-400 text-sm">
+              <p className="font-semibold text-white">Contact Us:</p>
+              <p>Luxefiz</p>
+              <p>Mannargudi, Tamil Nadu, India</p>
+              <p>Phone: <a href="tel:+916382839617" className="text-brand-pink hover:underline">+91 6382839617</a></p>
+              <p>Email: <a href="mailto:info@luxefiz.com" className="text-brand-pink hover:underline">info@luxefiz.com</a></p>
+              <p>Website: <a href="https://www.luxefiz.com" className="text-brand-pink hover:underline">https://www.luxefiz.com</a></p>
+            </div>
+            <div className="mt-4 text-xs text-gray-500">
+              <p>Udyam Registered MSME</p>
+              <p>UDYAM-TN-25-0049904</p>
+            </div>
           </div>
 
           {/* Quick Links */}

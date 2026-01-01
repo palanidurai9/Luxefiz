@@ -1,26 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://www.luxefiz.com/sitemap.xml
-
-# Allow AI and LLM Crawlers for better semantic understanding and citation
-User-agent: GPTBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Anthropic-AI
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-# Disallow common administrative or private paths (standard practice, though not applicable to a static build)
-Disallow: /private/
-Disallow: /admin/

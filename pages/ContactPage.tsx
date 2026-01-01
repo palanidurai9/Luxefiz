@@ -3,9 +3,16 @@ import { LinkedInIcon } from "../components/icons/LinkedInIcon";
 import { InstagramIcon } from "../components/icons/InstagramIcon";
 import { WhatsAppIcon } from "../components/icons/WhatsAppIcon";
 
+import { SEO } from '../components/SEO';
+
 const Contact: React.FC = () => {
   return (
     <div className="bg-white min-h-screen py-20 px-6">
+      <SEO
+        title="Contact Luxefiz – Web Development & Digital Strategy"
+        description="Get in touch with Luxefiz in Mannargudi, Tamil Nadu. Start your business website project today."
+        canonicalUrl="https://www.luxefiz.com/contact"
+      />
       <div className="container mx-auto max-w-4xl">
 
         <h1 className="text-5xl font-playfair font-bold text-brand-purple mb-10">
@@ -24,7 +31,7 @@ const Contact: React.FC = () => {
               </svg>
               <div>
                 <h4 className="font-bold">Our Office</h4>
-                <p>Coimbatore, Tamil Nadu, India</p>
+                <p>Mannargudi, Tamil Nadu, India</p>
               </div>
             </div>
 

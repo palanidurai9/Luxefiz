@@ -1,4 +1,5 @@
 import React from 'react';
+import { SEO } from '../components/SEO';
 import { LinkedInIcon } from '../components/icons/LinkedInIcon';
 import { InstagramIcon } from '../components/icons/InstagramIcon';
 import { YouTubeIcon } from '../components/icons/YouTubeIcon';
@@ -13,6 +14,11 @@ const ValuePill: React.FC<{ icon: string; text: string }> = ({ icon, text }) => 
 const AboutPage: React.FC = () => {
     return (
         <div className="animate-fadeIn">
+            <SEO
+                title="About Luxefiz – Professional Web Development Agency Tamil Nadu"
+                description="We are Luxefiz. A creative tech studio blending strategy with digital excellence to build trusted online presence systems for businesses."
+                canonicalUrl="https://www.luxefiz.com/about"
+            />
             {/* Page Header */}
             <section className="py-20 px-6 bg-white">
                 <div className="container mx-auto text-center max-w-4xl">
