@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { blogPosts, BlogPost } from '../data/blogPosts';
 
@@ -33,10 +33,11 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
 const BlogPage: React.FC = () => {
     return (
         <>
-            <Helmet>
-                <title>Insights | Luxefiz - Building Business Trust Online</title>
-                <meta name="description" content="Practical insights on professional websites, online presence, and business growth for companies in Tamil Nadu." />
-            </Helmet>
+            <SEO
+                title="Insights | Luxefiz - Building Business Trust Online"
+                description="Practical insights on professional websites, online presence, and business growth for companies in Tamil Nadu."
+                canonicalUrl="https://www.luxefiz.com/blog"
+            />
 
             <div className="bg-white min-h-screen">
                 {/* SECTION 1: INTRO */}

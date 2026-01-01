@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { SEO } from '../components/SEO';
 import { blogPosts } from '../data/blogPosts';
 
 const BlogPostPage: React.FC = () => {
@@ -13,10 +13,12 @@ const BlogPostPage: React.FC = () => {
 
     return (
         <>
-            <Helmet>
-                <title>{post.title} | Luxefiz Insights</title>
-                <meta name="description" content={post.excerpt} />
-            </Helmet>
+            <SEO
+                title={`${post.title} | Luxefiz Insights`}
+                description={post.excerpt}
+                canonicalUrl={`https://www.luxefiz.com/blog/${post.slug}`}
+                type="article"
+            />
 
             <div className="bg-white min-h-screen pt-32 pb-20">
                 <article className="max-w-3xl mx-auto px-6 md:px-12">

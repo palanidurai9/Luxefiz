@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '../components/SEO';
 import { StarIcon } from '../components/icons/StarIcon';
 
 interface Testimonial {
@@ -78,10 +78,11 @@ const TestimonialCard: React.FC<Testimonial> = ({ quote, name, role, initial, co
 const TestimonialsPage: React.FC = () => {
   return (
     <>
-      <Helmet>
-        <title>Client Reviews | Luxefiz - Trusted by Businesses</title>
-        <meta name="description" content="See what business owners in Tamil Nadu are saying about working with Luxefiz for their website and online presence." />
-      </Helmet>
+      <SEO
+        title="Client Reviews | Luxefiz - Trusted by Businesses"
+        description="See what business owners in Tamil Nadu are saying about working with Luxefiz for their website and online presence."
+        canonicalUrl="https://www.luxefiz.com/testimonials"
+      />
 
       <div className="min-h-screen bg-[#FAFAFA] pt-32 pb-20 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
