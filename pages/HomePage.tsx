@@ -39,7 +39,18 @@ const HomePage: React.FC = () => {
             "addressLocality": "Mannargudi",
             "addressRegion": "Tamil Nadu",
             "addressCountry": "IN"
-          }
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Mannargudi" },
+            { "@type": "City", "name": "Chennai" },
+            { "@type": "City", "name": "Coimbatore" },
+            { "@type": "City", "name": "Madurai" },
+            { "@type": "City", "name": "Trichy" },
+            { "@type": "City", "name": "Salem" },
+            { "@type": "City", "name": "Tirunelveli" },
+            { "@type": "City", "name": "Thanjavur" }
+          ],
+          "priceRange": "$$"
         }}
       />
 

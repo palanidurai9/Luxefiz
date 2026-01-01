@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
               <div>
-                <h4 className="font-bold">Our Office</h4>
+                <h4 className="font-bold">Headquarters</h4>
                 <p>Mannargudi, Tamil Nadu, India</p>
               </div>
             </div>
