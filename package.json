@@ -9,21 +9,31 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@prisma/adapter-pg": "^7.9.1",
+    "@prisma/client": "^7.9.1",
     "@tailwindcss/postcss": "^4.1.18",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.2.1",
     "nodemailer": "^7.0.10",
+    "pg": "^8.23.0",
+    "qrcode.react": "^4.2.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-helmet-async": "^2.0.5",
-    "react-router-dom": "^7.9.5"
+    "react-router-dom": "^7.9.5",
+    "vercel": "^58.9.2"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "@types/pg": "^8.21.0",
+    "@vercel/node": "^5.9.9",
     "@vitejs/plugin-react": "^5.0.0",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
+    "prisma": "^7.9.1",
     "tailwindcss": "^4.1.16",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
