@@ -68,7 +68,7 @@ const BrandingServicePage: React.FC = () => {
             <span className="text-signature-pink">Unforgettable, Trusted Brand</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl leading-relaxed mb-8">
-            Your brand is the gut feeling a customer has about your business. We craft timeless visual identities, logo marks, and cohesive design systems that reflect your true real-world quality and command premium pricing.
+            Your brand is the gut feeling a customer has about your business. We craft timeless visual identities, logo marks, and cohesive design systems that reflect your true real-world quality and command market authority.
           </p>
 
           <div className="flex flex-wrap gap-4">

@@ -57,7 +57,7 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Professionalism:</strong> are the images high-quality and the layout clean?</li>
       </ul>
       
-      <p>Whether you are a local retailer in <strong>Thanjavur</strong> or a service provider in <strong>Chennai</strong>, your digital appearance sets the price anchor for your services. A premium website allows you to command premium rates.</p>
+      <p>Whether you are a local retailer in <strong>Thanjavur</strong> or a service provider in <strong>Chennai</strong>, your digital appearance sets the quality anchor for your services. A premium website allows you to build immediate trust with high-value clients.</p>
     `
   },
   {

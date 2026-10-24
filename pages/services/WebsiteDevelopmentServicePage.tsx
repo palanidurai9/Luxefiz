@@ -22,13 +22,7 @@ const WebsiteDevelopmentServicePage: React.FC = () => {
             },
             "serviceType": "Web Development",
             "areaServed": ["Tamil Nadu", "Coimbatore", "Mannargudi", "Chennai", "India"],
-            "description": "Custom coded business website development engineered for sub-second speeds, mobile excellence, and search engine discovery.",
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "INR",
-              "price": "25000",
-              "description": "Transparent project tiers starting from ₹25,000 for verified businesses."
-            }
+            "description": "Custom coded business website development engineered for sub-second speeds, mobile excellence, and search engine discovery."
           },
           {
             "@context": "https://schema.org",
@@ -60,10 +54,10 @@ const WebsiteDevelopmentServicePage: React.FC = () => {
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "How much does a custom business website cost in Tamil Nadu?",
+                "name": "How is the website development scope determined?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "At Luxefiz, professional business websites typically range between ₹25,000 to ₹75,000 depending on page count, technical features, and custom styling requirements. We provide fixed-scope proposals with no hidden monthly software fees."
+                  "text": "Every project at Luxefiz is scoped based on your specific business goals, number of pages, technical integrations, and custom design requirements. We provide a detailed, fixed-scope proposal after an initial discovery consultation, with zero hidden monthly software fees."
                 }
               },
               {
@@ -127,7 +121,7 @@ const WebsiteDevelopmentServicePage: React.FC = () => {
               Why Most Agency Websites Fail to Generate Growth
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              In competitive commercial markets across Tamil Nadu, businesses often get stuck between cheap ₹5,000 WordPress templates that break within months, or bloated agency packages that charge lakhs without technical accountability.
+              In competitive commercial markets across Tamil Nadu, businesses often get stuck between fragile, bloated WordPress templates that break within months, or large agencies that overcomplicate projects without technical accountability.
             </p>
           </div>
 
@@ -218,21 +212,21 @@ const WebsiteDevelopmentServicePage: React.FC = () => {
               </div>
             </div>
 
-            {/* Pricing Expectations Card */}
+            {/* Project Solution Scopes Card */}
             <div className="bg-white p-8 md:p-10 rounded-3xl shadow-card border border-gray-100">
-              <span className="badge-pill badge-pill-purple mb-4">Market-Realistic Pricing</span>
+              <span className="badge-pill badge-pill-purple mb-4">Solution Scopes</span>
               <h3 className="text-2xl font-display font-bold text-obsidian mb-3">
-                Transparent Investment Tiers
+                Tailored Project Scopes
               </h3>
               <p className="text-xs text-gray-500 mb-6">
-                Based on verified Tamil Nadu & Coimbatore market standards. Fixed scope, milestone payments.
+                Crafted around your operational requirements. Fixed scope, milestone deliveries.
               </p>
 
               <div className="space-y-4">
                 <div className="p-4 rounded-2xl bg-gray-50 border border-gray-100">
                   <div className="flex justify-between items-baseline mb-1">
                     <span className="font-bold text-obsidian">Starter Business Website</span>
-                    <span className="font-display font-bold text-luxefiz-purple text-lg">₹25,000 – ₹40,000</span>
+                    <span className="font-display font-semibold text-luxefiz-purple text-xs uppercase tracking-wider">Fast-Track Delivery</span>
                   </div>
                   <p className="text-xs text-gray-600">
                     Up to 5 pages (Home, About, Services, Contact, Portfolio). Ideal for local trades, clinics, and emerging founders.
@@ -242,7 +236,7 @@ const WebsiteDevelopmentServicePage: React.FC = () => {
                 <div className="p-4 rounded-2xl bg-purple-50/50 border border-luxefiz-purple/20">
                   <div className="flex justify-between items-baseline mb-1">
                     <span className="font-bold text-obsidian">Growth Multi-Page System</span>
-                    <span className="font-display font-bold text-luxefiz-purple text-lg">₹40,000 – ₹80,000</span>
+                    <span className="font-display font-semibold text-luxefiz-purple text-xs uppercase tracking-wider">Full Search Architecture</span>
                   </div>
                   <p className="text-xs text-gray-600">
                     6 to 12 pages with dedicated service sub-routes, SEO keyword mapping, blog integration, and structured lead captures.
@@ -252,7 +246,7 @@ const WebsiteDevelopmentServicePage: React.FC = () => {
                 <div className="p-4 rounded-2xl bg-gray-50 border border-gray-100">
                   <div className="flex justify-between items-baseline mb-1">
                     <span className="font-bold text-obsidian">Custom Portal / E-commerce</span>
-                    <span className="font-display font-bold text-luxefiz-purple text-lg">₹80,000 – ₹1,50,000+</span>
+                    <span className="font-display font-semibold text-luxefiz-purple text-xs uppercase tracking-wider">Advanced Integrations</span>
                   </div>
                   <p className="text-xs text-gray-600">
                     Advanced web applications, payment gateways, product catalogs, and customized client dashboards.

@@ -11,7 +11,7 @@ const AboutPage: React.FC = () => {
     <div className="bg-white min-h-screen">
       <SEO
         title="About Luxefiz — Premium Digital Growth & Creative Technology Studio"
-        description="Learn about Luxefiz, founded by Palani Durai in Tamil Nadu. We bridge the gap between high-end digital agency quality and accessible pricing for growing businesses."
+        description="Learn about Luxefiz, founded by Palani Durai in Tamil Nadu. We bridge the gap between high-end digital agency quality and accessible digital partnerships for growing businesses."
         canonicalUrl="https://www.luxefiz.com/about"
         schema={[
           {
@@ -65,7 +65,7 @@ const AboutPage: React.FC = () => {
             <span className="text-signature-pink">Without Big Agency Stress</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
-            Luxefiz was founded to solve a glaring problem: too many high-potential businesses look mediocre online simply because enterprise agencies charge unrealistic prices. We exist to fix that.
+            Luxefiz was founded to solve a glaring problem: too many high-potential businesses look mediocre online simply because traditional agencies overcomplicate deliverables. We exist to fix that.
           </p>
           <div className="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-signature-pink font-display">
             "Marketing with Class, Easy on Cash!"
@@ -123,7 +123,7 @@ const AboutPage: React.FC = () => {
                   <span className="w-6 h-6 rounded-full bg-signature-pink text-obsidian font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
                   <div>
                     <h4 className="font-bold text-white text-sm">Transparent Scope</h4>
-                    <p className="text-xs text-gray-400">Milestone pricing with zero hidden maintenance traps or builder lock-ins.</p>
+                    <p className="text-xs text-gray-400">Milestone delivery with zero hidden maintenance traps or builder lock-ins.</p>
                   </div>
                 </div>
               </div>

@@ -185,7 +185,7 @@ const ServicesPage: React.FC = () => {
               Everything Your Business Needs to Win Online
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              Click into each service to view technical specifications, deliverables, and transparent pricing scopes.
+              Click into each service to view technical specifications, deliverables, and customized project scopes.
             </p>
           </div>
 
@@ -245,7 +245,7 @@ const ServicesPage: React.FC = () => {
             <div>
               <span className="badge-pill badge-pill-purple mb-4">Why Luxefiz?</span>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-obsidian mb-6">
-                Premium Agency Standards, Practical Business Pricing
+                Premium Agency Standards, Practical Business Value
               </h2>
               <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
                 <p>

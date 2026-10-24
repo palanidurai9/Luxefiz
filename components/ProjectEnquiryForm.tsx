@@ -30,11 +30,12 @@ const availableServices = [
 ];
 
 const budgetOptions = [
-  '₹20,000 – ₹40,000 (Starter / Local Business)',
-  '₹40,000 – ₹80,000 (Growth / Custom Multi-Page)',
-  '₹80,000 – ₹1,50,000 (E-commerce / Advanced Portal)',
-  '₹1,50,000+ (Custom SaaS / Dedicated Platform)',
-  'Need Guidance / Not Sure Yet'
+  'Starter Business Website (Essential Online Presence)',
+  'Growth Multi-Page System (Dedicated Service & SEO Pages)',
+  'E-commerce Store (Products, UPI & Payment Gateway)',
+  'Custom Web Application / SaaS Portal',
+  'Website Redesign & Speed Optimization',
+  'Need Guidance / Open to Scoping Discussion'
 ];
 
 export const ProjectEnquiryForm: React.FC<{ defaultService?: string }> = ({ defaultService }) => {
@@ -111,7 +112,7 @@ export const ProjectEnquiryForm: React.FC<{ defaultService?: string }> = ({ defa
 
   const handleWhatsAppRedirect = () => {
     if (!validate()) return;
-    const msg = `Hello Luxefiz, I want to discuss a project:%0A- Name: ${encodeURIComponent(formData.fullName)}%0A- Business: ${encodeURIComponent(formData.businessName || 'N/A')}%0A- City: ${encodeURIComponent(formData.city || 'N/A')}%0A- Services: ${encodeURIComponent(formData.services.join(', '))}%0A- Budget: ${encodeURIComponent(formData.budget)}%0A- Details: ${encodeURIComponent(formData.message || 'Looking for an initial consultation.')}`;
+    const msg = `Hello Luxefiz, I want to discuss a project:%0A- Name: ${encodeURIComponent(formData.fullName)}%0A- Business: ${encodeURIComponent(formData.businessName || 'N/A')}%0A- City: ${encodeURIComponent(formData.city || 'N/A')}%0A- Services: ${encodeURIComponent(formData.services.join(', '))}%0A- Scope: ${encodeURIComponent(formData.budget)}%0A- Details: ${encodeURIComponent(formData.message || 'Looking for an initial consultation.')}`;
     window.open(`https://wa.me/916382839617?text=${msg}`, '_blank');
   };
 
@@ -133,7 +134,7 @@ export const ProjectEnquiryForm: React.FC<{ defaultService?: string }> = ({ defa
           <div className="text-xs uppercase font-bold text-gray-400 mb-2">Inquiry Summary</div>
           <div className="text-sm space-y-1.5 text-gray-700">
             <p><strong>Selected Services:</strong> {formData.services.join(', ')}</p>
-            <p><strong>Budget Target:</strong> {formData.budget}</p>
+            <p><strong>Project Scope:</strong> {formData.budget}</p>
             <p><strong>Contact Phone:</strong> {formData.phone}</p>
           </div>
         </div>
@@ -179,7 +180,7 @@ export const ProjectEnquiryForm: React.FC<{ defaultService?: string }> = ({ defa
           Tell Us About Your Project
         </h3>
         <p className="text-sm text-gray-600">
-          Clear, structured estimates with no hidden surprise costs. We respond within 4 business hours.
+          Clear, structured estimates with no hidden surprise terms. We respond within 4 business hours.
         </p>
       </div>
 
@@ -298,7 +299,7 @@ export const ProjectEnquiryForm: React.FC<{ defaultService?: string }> = ({ defa
 
           <div>
             <label htmlFor="budget" className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
-              Approximate Budget
+              Project Scope / Solution Type
             </label>
             <select
               id="budget"

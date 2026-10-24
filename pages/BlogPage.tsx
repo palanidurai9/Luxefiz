@@ -111,7 +111,7 @@ const BlogPage: React.FC = () => {
 
           <div className="grid md:grid-cols-2 gap-4 text-xs md:text-sm">
             {[
-              'How Much Does a Business Website Cost in Tamil Nadu? (2026 Guide)',
+              'Business Website Planning & Scoping Guide for Tamil Nadu (2026)',
               'Website Design vs Custom Development: What Ambitious Businesses Need',
               'How to Choose a Website Development Company in Coimbatore',
               'Why Small Businesses Need a Dedicated Website Over an Instagram Page',

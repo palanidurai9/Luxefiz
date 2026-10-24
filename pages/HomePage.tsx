@@ -96,8 +96,8 @@ const selectedProjects = [
 
 const faqList = [
   {
-    question: 'How much does a business website cost?',
-    answer: 'At Luxefiz, custom business websites typically range between ₹25,000 to ₹75,000 depending on page count, technical features, and design requirements. Complex e-commerce stores or dynamic portals range from ₹80,000 to ₹1,50,000+. We provide fixed-scope quotes with zero hidden monthly builder fees.'
+    question: 'How do you scope and quote website development projects?',
+    answer: 'We tailor each proposal to your specific business requirements, page count, and technical features. After an initial discovery consultation, we provide a transparent, fixed-scope proposal with clear milestones and zero hidden fees.'
   },
   {
     question: 'How long does website development take?',
@@ -162,7 +162,6 @@ const HomePage: React.FC = () => {
             "url": "https://www.luxefiz.com",
             "telephone": "+916382839617",
             "email": "info@luxefiz.com",
-            "priceRange": "₹₹",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Mannargudi",
@@ -374,7 +373,7 @@ const HomePage: React.FC = () => {
                     desc: 'Speak directly with technical craftspeople who make decisions, without intermediate account manager delays.'
                   },
                   {
-                    title: 'Transparent Milestone Pricing',
+                    title: 'Transparent Milestone Delivery',
                     desc: 'Clear, fixed-scope proposals with milestone payments. You own 100% of your code and domain assets.'
                   }
                 ].map((item, i) => (
