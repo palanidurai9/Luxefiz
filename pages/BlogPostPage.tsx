@@ -4,74 +4,138 @@ import { SEO } from '../components/SEO';
 import { blogPosts } from '../data/blogPosts';
 
 const BlogPostPage: React.FC = () => {
-    const { slug } = useParams<{ slug: string }>();
-    const post = blogPosts.find((p) => p.slug === slug);
+  const { slug } = useParams<{ slug: string }>();
+  const post = blogPosts.find((p) => p.slug === slug);
 
-    if (!post) {
-        return <Navigate to="/blog" replace />;
-    }
+  if (!post) {
+    return <Navigate to="/insights" replace />;
+  }
 
-    return (
-        <>
-            <SEO
-                title={`${post.title} | Luxefiz Insights`}
-                description={post.excerpt}
-                canonicalUrl={`https://www.luxefiz.com/blog/${post.slug}`}
-                type="article"
-            />
+  return (
+    <>
+      <SEO
+        title={`${post.title} | Luxefiz Insights`}
+        description={post.excerpt}
+        canonicalUrl={`https://www.luxefiz.com/blog/${post.slug}`}
+        type="article"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.title,
+            "description": post.excerpt,
+            "datePublished": "2025-10-12",
+            "author": {
+              "@type": "Person",
+              "name": "Palani Durai",
+              "url": "https://www.luxefiz.com/about"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Luxefiz",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.luxefiz.com/luxefiz-logo.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://www.luxefiz.com/blog/${post.slug}`
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.luxefiz.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Insights",
+                "item": "https://www.luxefiz.com/insights"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": post.title,
+                "item": `https://www.luxefiz.com/blog/${post.slug}`
+              }
+            ]
+          }
+        ]}
+      />
 
-            <div className="bg-white min-h-screen pt-32 pb-20">
-                <article className="max-w-3xl mx-auto px-6 md:px-12">
-                    {/* Header */}
-                    <header className="mb-12 text-center">
-                        <div className="flex items-center justify-center space-x-4 text-sm text-gray-500 mb-6 uppercase tracking-widest font-semibold">
-                            <span className="text-brand-purple">{post.category}</span>
-                            <span>&bull;</span>
-                            <span>{post.date}</span>
-                            <span>&bull;</span>
-                            <span>{post.readTime}</span>
-                        </div>
-                        <h1 className="text-3xl md:text-5xl font-playfair font-bold text-brand-charcoal leading-tight mb-8">
-                            {post.title}
-                        </h1>
-                        <div className="w-20 h-1 bg-brand-purple mx-auto"></div>
-                    </header>
-
-                    {/* Content */}
-                    <div
-                        className="prose prose-lg prose-purple mx-auto text-gray-700 leading-relaxed font-poppins"
-                        dangerouslySetInnerHTML={{ __html: post.content }}
-                    />
-
-                    {/* SECTION 3: INTERNAL LINKING */}
-                    <div className="mt-16 pt-10 border-t border-gray-100">
-                        <h3 className="text-xl font-bold font-playfair mb-6">Continue Exploring</h3>
-                        <div className="bg-gray-50 p-6 rounded-lg border border-gray-100 space-y-4">
-                            <p>
-                                Interested in seeing examples of our work? View our <Link to="/portfolio" className="text-brand-purple hover:underline font-semibold">professional business websites</Link> in our portfolio.
-                            </p>
-                            <p>
-                                Ready to discuss your project? <Link to="/contact" className="text-brand-purple hover:underline font-semibold">Start a conversation</Link> about building a strong online presence.
-                            </p>
-                            <p>
-                                <Link to="/" className="text-gray-500 hover:text-black hover:underline text-sm">Return to Homepage</Link>
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="mt-16 text-center">
-                        <p className="text-xl font-playfair font-bold text-brand-charcoal mb-2">
-                            Looking to build a professional online presence for your business?
-                        </p>
-                        <a href="https://api.whatsapp.com/send?phone=916382839617" target="_blank" rel="noopener noreferrer" className="inline-block mt-4 px-8 py-3 bg-brand-charcoal text-white font-semibold rounded hover:bg-brand-purple transition-all duration-300">
-                            Start a Conversation with Luxefiz
-                        </a>
-                    </div>
-                </article>
+      <div className="bg-white min-h-screen pt-32 pb-24">
+        <article className="max-w-3xl mx-auto px-6">
+          {/* Header */}
+          <header className="mb-12 text-center">
+            <div className="flex items-center justify-center space-x-3 text-xs text-gray-500 mb-6 uppercase tracking-wider font-semibold">
+              <span className="badge-pill badge-pill-purple">{post.category}</span>
+              <span>&bull;</span>
+              <span>{post.date}</span>
+              <span>&bull;</span>
+              <span>{post.readTime}</span>
             </div>
-        </>
-    );
+            <h1 className="text-3xl md:text-5xl font-display font-black text-obsidian leading-tight mb-8">
+              {post.title}
+            </h1>
+            <div className="w-16 h-1 bg-signature-pink mx-auto rounded-full"></div>
+          </header>
+
+          {/* Article Body */}
+          <div
+            className="prose prose-lg prose-purple mx-auto text-gray-700 leading-relaxed font-body space-y-6 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-obsidian [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-obsidian [&_h3]:mt-8 [&_h3]:mb-3 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_p]:text-base [&_p]:leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+
+          {/* Contextual Internal Links */}
+          <div className="mt-16 pt-10 border-t border-gray-100">
+            <h3 className="text-xl font-display font-bold text-obsidian mb-4">Related Solutions</h3>
+            <div className="bg-porcelain p-6 rounded-2xl border border-gray-100 space-y-3 text-sm">
+              <p>
+                Interested in evaluating custom web solutions? Explore our{' '}
+                <Link to="/services/website-development" className="text-luxefiz-purple hover:underline font-bold">
+                  custom business website development services
+                </Link>.
+              </p>
+              <p>
+                Need to evaluate your search visibility? Discover our{' '}
+                <Link to="/services/seo" className="text-luxefiz-purple hover:underline font-bold">
+                  technical SEO services
+                </Link>.
+              </p>
+              <p>
+                Ready to talk with an engineer?{' '}
+                <Link to="/contact" className="text-luxefiz-purple hover:underline font-bold">
+                  Start a project enquiry
+                </Link>.
+              </p>
+            </div>
+          </div>
+
+          {/* Author Byline */}
+          <div className="mt-12 p-6 rounded-2xl bg-gray-50 border border-gray-100 flex items-center gap-4">
+            <img
+              src="/image/meeee.png"
+              alt="Palani Durai"
+              className="w-14 h-14 rounded-full object-cover object-top border-2 border-luxefiz-purple flex-shrink-0"
+            />
+            <div>
+              <h4 className="font-display font-bold text-sm text-obsidian">Written by Palani Durai</h4>
+              <p className="text-xs text-gray-500">
+                Founder & Principal Engineer at Luxefiz. Writing on digital systems, Core Web Vitals, and organic search growth for growing businesses.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </>
+  );
 };
 
 export default BlogPostPage;

@@ -3,85 +3,76 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luxefiz | Web Development & Digital Marketing Agency in Tamil Nadu</title>
+  <title>Luxefiz — Premium Website Development & Digital Growth Studio</title>
   <meta name="description"
-    content="Luxefiz is a web design and digital marketing agency in Tamil Nadu helping brands build, grow, and stand out online.">
-  <meta name="keywords" content="digital marketing, web development, luxefiz, brand design, SEO Tamil Nadu">
+    content="Luxefiz crafts high-performance business websites, technical SEO architectures, and modern digital brand experiences for ambitious businesses across Tamil Nadu and India." />
   <meta name="robots" content="index, follow" />
-  <meta name="keywords"
-    content="digital marketing, web development, SaaS development, startup marketing, branding agency, affordable web design India, Luxefiz">
-  <meta name="keywords"
-    content="about Luxefiz, founder Palani Durai, student entrepreneur India, digital agency values, brand story, affordable creative agency">
-  <meta name="keywords"
-    content="web design services, SaaS development services, digital marketing services, full stack agency India, UI UX design, brand marketing, scale startup growth">
-  <meta name="keywords"
-    content="Luxefiz portfolio, case studies, web design portfolio, SaaS projects, digital marketing results, real business results, client success stories">
-  <meta name="keywords"
-    content="client testimonials, reviews, Luxefiz reviews, agency feedback, customer success, founder testimonials, client trust">
-  <meta name="keywords"
-    content="agency workflow, development process, design process, digital agency steps, strategic workflow, collaborative process, project lifecycle">
-  <meta name="keywords"
-    content="contact Luxefiz, digital agency contact, web design agency Coimbatore, SaaS agency India, marketing agency Tamil Nadu, get in touch Luxefiz" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="canonical" href="https://www.luxefiz.com/" />
+
+  <!-- Favicons and Manifest -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/android-chrome-512x512.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/android-chrome-512x512.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <meta name="theme-color" content="#000000">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Preconnect for faster font fetching -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="theme-color" content="#0D0B10" />
 
-  <!-- Optimized font load with display=swap -->
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
 
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.luxefiz.com/">
-  <meta property="og:title" content="Luxefiz — Marketing with Class, Easy on Cash">
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.luxefiz.com/" />
+  <meta property="og:title" content="Luxefiz — Marketing with Class, Easy on Cash" />
   <meta property="og:description"
-    content="Luxefiz is a modern digital marketing & creative tech company delivering premium-class brand experiences without premium pricing stress.">
-  <meta property="og:image" content="https://www.luxefiz.com/og-cover.jpg">
-  <link rel="canonical" href="https://www.luxefiz.com/">
+    content="Luxefiz builds high-performance business websites and strategic digital growth systems that help ambitious businesses build trust and get discovered." />
+  <meta property="og:image" content="https://www.luxefiz.com/og-cover.jpg" />
+  <meta property="og:site_name" content="Luxefiz" />
 
-
-  <!-- Twitter / WhatsApp -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://www.luxefiz.com/">
-  <meta name="twitter:title" content="Luxefiz — Marketing with Class, Easy on Cash">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.luxefiz.com/" />
+  <meta name="twitter:title" content="Luxefiz — Marketing with Class, Easy on Cash" />
   <meta name="twitter:description"
-    content="Creative tech & marketing company delivering classy results without big budgets.">
-  <meta name="twitter:image" content="https://www.luxefiz.com/og-cover.jpg">
+    content="Strategic digital agency in Tamil Nadu. We turn your business into a trusted digital brand." />
+  <meta name="twitter:image" content="https://www.luxefiz.com/og-cover.jpg" />
+
+  <!-- Tailwind Script with Luxe Digital Studio Theme Tokens -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            'playfair': ['"Playfair Display"', 'serif'],
-            'poppins': ['"Poppins"', 'sans-serif'],
+            'display': ['"Manrope"', '-apple-system', 'sans-serif'],
+            'manrope': ['"Manrope"', '-apple-system', 'sans-serif'],
+            'space': ['"Space Grotesk"', 'monospace'],
+            'body': ['"Inter"', '-apple-system', 'sans-serif'],
+            'inter': ['"Inter"', '-apple-system', 'sans-serif'],
+            'playfair': ['"Manrope"', 'sans-serif'],
+            'poppins': ['"Inter"', 'sans-serif'],
           },
           colors: {
+            'obsidian': '#0D0B10',
+            'luxefiz-purple': '#9F009F',
+            'signature-pink': '#FF66C4',
+            'porcelain': '#F7F4F8',
+            'midnight-plum': '#29232E',
+            'soft-lavender': '#E7DFEB',
             'brand-purple': '#9F009F',
             'brand-pink': '#FF66C4',
-            'brand-charcoal': '#2B1F2F',
-            'brand-gray': '#DAD4E0',
+            'brand-charcoal': '#0D0B10',
+            'brand-gray': '#E7DFEB',
           },
-          animation: {
-            'gradient-flow': 'gradient-flow 15s ease infinite',
-          },
-          keyframes: {
-            'gradient-flow': {
-              '0%, 100%': { backgroundPosition: '0% 50%' },
-              '50%': { backgroundPosition: '100% 50%' },
-            },
-          },
-          backgroundSize: {
-            '200%': '200% 200%',
+          boxShadow: {
+            'subtle': '0 4px 20px -2px rgba(13, 11, 16, 0.05)',
+            'card': '0 10px 30px -4px rgba(13, 11, 16, 0.08)',
+            'hover': '0 20px 40px -6px rgba(159, 0, 159, 0.12)',
           }
         }
       }
@@ -94,7 +85,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-GVQYNMVRHT');
   </script>
 
@@ -109,37 +99,40 @@
     })(window, document, 'script', 'dataLayer', 'GTM-5FQLBWS4');</script>
   <!-- End Google Tag Manager -->
 
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.5"
-  }
-}
-</script>
+  <!-- Schema.org Organization Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Luxefiz",
+    "legalName": "Luxefiz",
     "url": "https://www.luxefiz.com",
     "logo": "https://www.luxefiz.com/luxefiz-logo.png",
+    "email": "info@luxefiz.com",
+    "telephone": "+916382839617",
+    "slogan": "Marketing with Class, Easy on Cash!",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mannargudi",
+      "addressRegion": "Tamil Nadu",
+      "postalCode": "614001",
+      "addressCountry": "IN"
+    },
     "sameAs": [
       "https://www.instagram.com/luxefiz/",
-      "https://www.linkedin.com/company/luxefiz/"
+      "https://www.linkedin.com/company/luxefiz/",
+      "https://www.youtube.com/@luxefiz"
     ]
   }
   </script>
 </head>
-<h1></h1>
 
-<body class="bg-white text-brand-charcoal">
+<body class="bg-white text-obsidian antialiased selection:bg-signature-pink selection:text-white">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FQLBWS4" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>

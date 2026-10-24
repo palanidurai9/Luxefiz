@@ -1,187 +1,292 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { ProjectEnquiryForm } from '../components/ProjectEnquiryForm';
+
+interface ServiceOverviewItem {
+  id: string;
+  title: string;
+  badge: string;
+  description: string;
+  deliverables: string[];
+  link: string;
+  icon: string;
+}
+
+const allServices: ServiceOverviewItem[] = [
+  {
+    id: 'web-dev',
+    title: 'Custom Website Design & Development',
+    badge: 'Core Technology',
+    description: 'High-performance, bespoke business websites hand-coded with React, modern CSS, and semantic HTML. Engineered for sub-second speeds, flawless mobile responsiveness, and high conversion.',
+    deliverables: [
+      'Hand-crafted semantic HTML5 & React architecture',
+      'Core Web Vitals sub-second mobile loading',
+      'Integrated Schema markup & SEO foundation',
+      'High-converting enquiry forms & WhatsApp triggers'
+    ],
+    link: '/services/website-development',
+    icon: '⚡'
+  },
+  {
+    id: 'seo',
+    title: 'Search Engine Optimization (SEO)',
+    badge: 'Organic Search Authority',
+    description: 'Data-driven technical SEO and high-intent commercial content architecture that positions your brand at the top of organic search results across Coimbatore, Tamil Nadu, and India.',
+    deliverables: [
+      'Comprehensive technical crawl & speed audit',
+      'Commercial keyword intent mapping',
+      'JSON-LD rich snippet schema implementation',
+      'Google Search Console setup & reporting'
+    ],
+    link: '/services/seo',
+    icon: '🔍'
+  },
+  {
+    id: 'gbp',
+    title: 'Google Business Profile & Local Search',
+    badge: 'Local Customer Footfall',
+    description: 'Dominate Google Maps 3-pack searches and capture local phone calls and foot traffic for regional services, manufacturing units, retail stores, and healthcare practices.',
+    deliverables: [
+      'Category & sub-category ranking optimization',
+      'Regional NAP directory citation consistency',
+      'Automated ethical review acquisition workflows',
+      'Geo-tagged imagery & localized product menus'
+    ],
+    link: '/services/google-business-profile-optimization',
+    icon: '📍'
+  },
+  {
+    id: 'digital-marketing',
+    title: 'Performance Digital Marketing',
+    badge: 'Customer Acquisition',
+    description: 'Pragmatic paid advertising across Google Search and Meta (Instagram & Facebook). Designed for customer acquisition and measurable return on investment without fluff.',
+    deliverables: [
+      'High-intent Google Ads search campaigns',
+      'Targeted Meta demographic & interest funnels',
+      'Retargeting flows for past website visitors',
+      'Conversion tracking with Google Analytics 4'
+    ],
+    link: '/services/digital-marketing',
+    icon: '📈'
+  },
+  {
+    id: 'branding',
+    title: 'Brand Identity & Creative Design',
+    badge: 'Visual Credibility',
+    description: 'Timeless visual brand identities that elevate your perceived value. Vector logo design, balanced color palettes, editorial typography, and production-ready digital asset kits.',
+    deliverables: [
+      'Primary, secondary, and mark vector logos',
+      'Harmonious digital & print color palettes',
+      'Comprehensive brand typography manual',
+      'Social media kits & brand asset packages'
+    ],
+    link: '/services/branding',
+    icon: '✨'
+  },
+  {
+    id: 'ecommerce',
+    title: 'E-commerce Store Development',
+    badge: 'Online Transactions',
+    description: 'Fast, secure online stores built for Indian consumers. Seamless 1-click UPI checkout, Razorpay/PhonePe integration, automated courier sync, and intuitive product catalog management.',
+    deliverables: [
+      'High-speed mobile checkout optimization',
+      'Razorpay, PhonePe, Cashfree, and UPI integration',
+      'Automated logistics & courier API tracking',
+      'Inventory, coupon, and cart abandonment flows'
+    ],
+    link: '/services/ecommerce-development',
+    icon: '🛍️'
+  },
+  {
+    id: 'saas',
+    title: 'Custom SaaS & Web Applications',
+    badge: 'Product Engineering',
+    description: 'Full-stack software engineering for founders and growing companies. Scalable cloud architectures, custom internal portals, B2B workflow systems, and customer dashboards.',
+    deliverables: [
+      'Full-stack React, TypeScript & Node.js architecture',
+      'Secure PostgreSQL & Prisma database schema',
+      'Role-based access control (RBAC) & OAuth',
+      'Automated CI/CD cloud deployment pipelines'
+    ],
+    link: '/services/saas-development',
+    icon: '💻'
+  }
+];
 
 const ServicesPage: React.FC = () => {
   return (
-    <div className="bg-gray-50 animate-fadeIn">
+    <div className="bg-white min-h-screen">
       <SEO
-        title="Business Website Services – Web Development Company Tamil Nadu"
-        description="Comprehensive website development services by Luxefiz. We build professional, search-optimized websites that help businesses in Tamil Nadu grow."
+        title="Digital Services & Web Development Solutions | Luxefiz"
+        description="Explore the complete digital growth ecosystem by Luxefiz: Custom Web Development, Technical SEO, Google Business Profile, Branding, E-commerce, and SaaS Engineering."
         canonicalUrl="https://www.luxefiz.com/services"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Digital Marketing & Creative Technology Services",
+            "provider": {
+              "@type": "ProfessionalService",
+              "name": "Luxefiz",
+              "url": "https://www.luxefiz.com"
+            },
+            "areaServed": ["Tamil Nadu", "Coimbatore", "Mannargudi", "India"]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.luxefiz.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://www.luxefiz.com/services"
+              }
+            ]
+          }
+        ]}
       />
 
-      {/* Hero Section */}
-      <section className="bg-white pt-32 pb-20 px-6">
-        <div className="container mx-auto text-center max-w-5xl">
-          <span className="text-brand-pink font-bold uppercase tracking-wider text-sm mb-4 block">Our Expertise</span>
-          <h1 className="text-4xl md:text-6xl font-playfair font-black text-brand-charcoal mb-8 leading-tight">
-            Comprehensive Digital Solutions <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-pink">Built for Business Growth</span>
+      {/* Hero */}
+      <section className="bg-obsidian text-white pt-32 pb-24 px-6 border-b border-white/10">
+        <div className="container mx-auto max-w-5xl text-center">
+          <span className="badge-pill badge-pill-dark mb-4">Complete Growth System</span>
+          <h1 className="text-4xl md:text-6xl font-display font-black mb-6 leading-tight">
+            Integrated Digital Services <br className="hidden md:block" />
+            <span className="text-signature-pink">Engineered for Sustainable Growth</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We don't just write code; we build digital assets. Our services are designed to solve the three biggest problems businesses face online: being found, building trust, and converting visitors into customers.
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+            We don’t believe in isolated digital tactics. We build cohesive systems where custom web design, technical SEO, brand identity, and local discovery reinforce one another to drive real business value.
           </p>
-        </div>
-      </section>
-
-      {/* Service 1: Custom Web Development */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="w-16 h-16 bg-brand-purple rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-purple-500/30">
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-playfair font-bold text-brand-charcoal mb-6">Custom Business Website Development</h2>
-              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                <p>
-                  Your website is the foundation of your entire digital existence. In a market like Tamil Nadu, where competition is rapidly digitizing, a generic template is no longer enough. We build custom, hand-coded websites that are tailored specifically to your business goals and operational needs.
-                </p>
-                <p>
-                  Unlike drag-and-drop builders that produce slow, bloated code, our development process prioritizes performance and security. We use modern technologies (like React and crisp HTML5) to ensure your site loads instantly, even on slower 4G mobile networks commonly used across the region.
-                </p>
-                <p>
-                  A custom website gives you complete ownership and flexibility. As your business grows—perhaps you add new services, open a new branch in Madurai, or expand to Chennai—your website can scale with you without breaking. We build assets that are meant to last for years, not months.
-                </p>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2 bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
-              <h3 className="text-xl font-bold mb-6 border-b pb-4">Technical Deliverables</h3>
-              <ul className="space-y-4">
-                {[
-                  "Hand-coded Semantic HTML5 structure",
-                  "React.js / Next.js Framework Implementation",
-                  "Mobile-First Responsive Layouts",
-                  "Speed Optimization (Core Web Vitals)",
-                  "Cross-Browser Compatibility",
-                  "Secure SSL Configuration"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center text-gray-700">
-                    <span className="w-2 h-2 bg-brand-pink rounded-full mr-3"></span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="#services-list" className="btn-primary">
+              Explore All Services
+            </a>
+            <Link to="/contact" className="btn-dark">
+              Discuss Your Requirements &rarr;
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Service 2: Discovery & Search Architecture */}
-      <section className="py-20 px-6 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="bg-gray-50 p-8 rounded-3xl shadow-lg border border-gray-100">
-              <h3 className="text-xl font-bold mb-6 border-b pb-4">Visibility Deliverables</h3>
-              <ul className="space-y-4">
-                {[
-                  "Advanced Schema Markup (JSON-LD)",
-                  "Keyword-Optimized Heading Structures",
-                  "XML Sitemap & Robots.txt Configuration",
-                  "Google Search Console Setup",
-                  "Local Business Map Integration",
-                  "AI-Readable Content Formatting"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center text-gray-700">
-                    <span className="w-2 h-2 bg-brand-pink rounded-full mr-3"></span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <div className="w-16 h-16 bg-brand-pink rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-pink-500/30">
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-playfair font-bold text-brand-charcoal mb-6">Search & Discovery Architecture</h2>
-              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                <p>
-                  The most beautiful website in the world is useless if your customers cannot find it. Discovery is not an afterthought at Luxefiz; it is baked into the very architecture of the code we write. We ensure that search engines like Google and new AI platforms like ChatGPT can perfectly understand who you are and what you do.
-                </p>
-                <p>
-                  We implement advanced "Schema Markup" — a code language that helps search engines read your site. This means when someone searches for "best manufacturer in Coimbatore" or "service provider in Mannargudi", Google has the exact data it needs to recommend you. This Technical SEO foundation is critical for long-term organic growth.
-                </p>
-                <p>
-                  We focus on "high-intent" discovery. We structure your content to answer the specific questions your potential clients are asking. By providing clear, authoritative answers in a format machines can read, we help position your business as the trusted industry leader before the client even contacts you.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service 3: Trust & Identity */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-brand-charcoal mb-6">Brand Identity & Digital Trust</h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Trust is the currency of the internet. We design experiences that make your business look established, professional, and reliable from the first second.
+      {/* Core Services Grid */}
+      <section id="services-list" className="py-24 px-6 bg-porcelain">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="badge-pill badge-pill-purple mb-3">Service Matrix</span>
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-obsidian mb-4">
+              Everything Your Business Needs to Win Online
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Click into each service to view technical specifications, deliverables, and transparent pricing scopes.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300">
-              <h3 className="text-xl font-bold font-playfair mb-4">Visual Credibility</h3>
-              <p className="text-gray-600">
-                We use color psychology, professional typography, and whitespace to create a premium feel. Avoid the "cheap" look of generic templates that scares high-value clients away.
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {allServices.map((svc) => (
+              <div
+                key={svc.id}
+                className="editorial-card p-8 flex flex-col justify-between h-full bg-white group hover:border-luxefiz-purple/40 transition-all duration-300"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                      {svc.icon}
+                    </span>
+                    <span className="badge-pill badge-pill-purple text-[11px] py-1 px-3">
+                      {svc.badge}
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-display font-bold text-obsidian mb-3 group-hover:text-luxefiz-purple transition-colors">
+                    {svc.title}
+                  </h3>
+
+                  <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                    {svc.description}
+                  </p>
+
+                  <div className="space-y-2 mb-8 border-t border-gray-100 pt-5">
+                    <span className="text-xs uppercase font-bold text-gray-400 block mb-2">Key Deliverables</span>
+                    {svc.deliverables.map((item, i) => (
+                      <div key={i} className="flex items-start gap-2 text-xs text-gray-700">
+                        <span className="text-signature-pink font-bold">✓</span>
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-gray-100">
+                  <Link
+                    to={svc.link}
+                    className="inline-flex items-center gap-2 text-sm font-bold text-luxefiz-purple hover:text-signature-pink transition-colors"
+                  >
+                    Explore Service Details &rarr;
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The Luxefiz Difference */}
+      <section className="py-20 px-6 bg-white border-t border-gray-200">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="badge-pill badge-pill-purple mb-4">Why Luxefiz?</span>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-obsidian mb-6">
+                Premium Agency Standards, Practical Business Pricing
+              </h2>
+              <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+                <p>
+                  Most business owners have been burned by digital agencies: inflated retainers, unresponsive account managers, and websites built on generic templates that look outdated before launch.
+                </p>
+                <p>
+                  Luxefiz was founded on a simple promise: <strong>"Marketing with Class, Easy on Cash!"</strong> We combine modern engineering, disciplined brand strategy, and transparent project milestones so ambitious businesses get enterprise-class quality without the enterprise markup.
+                </p>
+                <div className="pt-2">
+                  <Link to="/about" className="text-luxefiz-purple font-bold hover:underline">
+                    Read Our Founder's Story &rarr;
+                  </Link>
+                </div>
+              </div>
             </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300">
-              <h3 className="text-xl font-bold font-playfair mb-4">Content Authority</h3>
-              <p className="text-gray-600">
-                We help structure your text to sound confident and expert. By clearly defining your services and value proposition, we eliminate confusion and build buyer confidence.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300">
-              <h3 className="text-xl font-bold font-playfair mb-4">Proof Signals</h3>
-              <p className="text-gray-600">
-                We strategically place testimonials, certifications, and case studies where they matter most. We turn your past successes into future sales tools.
-              </p>
+
+            <div className="editorial-dark-card p-8 md:p-10">
+              <h3 className="text-2xl font-display font-bold text-white mb-6">Our Core Commitments</h3>
+              <ul className="space-y-4 text-sm text-gray-300">
+                <li className="flex items-start gap-3">
+                  <span className="w-5 h-5 rounded-full bg-signature-pink text-obsidian font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+                  <span><strong>No Bloated Builders:</strong> We write hand-crafted, clean code tailored for fast loading.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-5 h-5 rounded-full bg-signature-pink text-obsidian font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+                  <span><strong>100% Code Ownership:</strong> You own your domain, code, and accounts completely.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-5 h-5 rounded-full bg-signature-pink text-obsidian font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+                  <span><strong>Direct Access:</strong> Speak directly with senior engineers and strategists, not salespeople.</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section for AI Readability */}
-      <section className="py-20 px-6 bg-white border-t border-gray-100">
+      {/* Embedded Enquiry */}
+      <section className="py-20 px-6 bg-porcelain border-t border-gray-200">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-playfair font-bold text-brand-charcoal mb-10">Common Questions About Our Services</h2>
-          <div className="space-y-6">
-            <div className="bg-gray-50 p-6 rounded-xl">
-              <h3 className="text-lg font-bold text-brand-charcoal mb-2">Do you use templates or build from scratch?</h3>
-              <p className="text-gray-700">We prioritize custom development. while we may use internal libraries to speed up the process, the core architecture is built specifically for your business needs to ensure maximum speed and uniqueness.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-xl">
-              <h3 className="text-lg font-bold text-brand-charcoal mb-2">Will my website work on mobile phones?</h3>
-              <p className="text-gray-700">Yes. We adopt a "Mobile-First" approach. Since most users in India browse via smartphones, we ensure the mobile experience is perfect before even looking at the desktop version.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-xl">
-              <h3 className="text-lg font-bold text-brand-charcoal mb-2">How long does it take to build a business website?</h3>
-              <p className="text-gray-700">A typical professional business website project takes between 2 to 4 weeks, depending on the complexity and content requirements. We prioritize quality and testing over rushing.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 px-6 bg-brand-charcoal text-white text-center">
-        <div className="container mx-auto max-w-3xl">
-          <h2 className="text-4xl font-playfair font-bold mb-8">Invest in Your Business's Future</h2>
-          <p className="text-xl text-gray-300 mb-10">
-            A website is not an expense; it is an asset that works for you every single day. Let's build something you are proud of.
-          </p>
-          <NavLink
-            to="/contact"
-            className="inline-block px-10 py-4 bg-white text-brand-charcoal font-bold rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-xl"
-          >
-            Start Your Project
-          </NavLink>
+          <ProjectEnquiryForm />
         </div>
       </section>
     </div>

@@ -1,100 +1,181 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
+import { ProjectEnquiryForm } from '../components/ProjectEnquiryForm';
 
-interface ProcessStepProps {
-  step: number;
+interface StepDetail {
+  number: string;
   title: string;
-  description: string;
+  phase: string;
+  summary: string;
+  deliverables: string[];
+  decisionPoint: string;
 }
 
-const ProcessStep: React.FC<ProcessStepProps> = ({ step, title, description }) => (
-  <div className="flex flex-col md:flex-row items-start space-x-0 md:space-x-6 p-8 bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100">
-    <div className="flex-shrink-0 w-16 h-16 mb-4 md:mb-0 rounded-full bg-gradient-to-br from-brand-pink to-brand-purple flex items-center justify-center text-white font-bold text-3xl font-playfair shadow-lg">
-      {step}
-    </div>
-    <div className="flex-1">
-      <h3 className="text-2xl font-bold font-playfair text-brand-charcoal mb-4">{title}</h3>
-      <div className="text-gray-600 leading-relaxed space-y-4">
-        {description.split('\n').map((para, i) => (
-          <p key={i}>{para}</p>
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
+const stepsData: StepDetail[] = [
+  {
+    number: '01',
+    title: 'Discover & Understand',
+    phase: 'Research & Intent Analysis',
+    summary: 'We delve into your commercial objectives, audience queries, and regional competitors in Coimbatore, Tamil Nadu, or across India. We uncover exactly what your prospective clients search for and what objections prevent them from hiring you.',
+    deliverables: [
+      'Buyer intent keyword cluster report',
+      'Competitor differentiation audit',
+      'Technical requirements & integrations scope'
+    ],
+    decisionPoint: 'Approval of the core project scope, target keywords, and feature roadmap.'
+  },
+  {
+    number: '02',
+    title: 'Strategize & Blueprint',
+    phase: 'Information Architecture & Wireframes',
+    summary: 'Before designing visual elements or writing a line of code, we blueprint the entire page hierarchy, user pathways, and conversion funnels to ensure maximum clarity and machine readability.',
+    deliverables: [
+      'Low-fidelity wireframe blueprints',
+      'Heading hierarchy (H1-H3) & Schema map',
+      'High-converting CTA placement plan'
+    ],
+    decisionPoint: 'Sign-off on page structure and conversion funnels before visual styling begins.'
+  },
+  {
+    number: '03',
+    title: 'Design & Build',
+    phase: 'Luxe UI/UX & Clean Engineering',
+    summary: 'We handcraft the user interface following our Luxe Digital Studio design system. We code lean, semantic HTML5 and modern React components optimized for Core Web Vitals and fluid responsiveness.',
+    deliverables: [
+      'High-fidelity editorial UI design with custom tokens',
+      'Clean React/TypeScript frontend implementation',
+      'Mobile-first responsive optimization across devices'
+    ],
+    decisionPoint: 'Interactive staging preview review and milestone acceptance.'
+  },
+  {
+    number: '04',
+    title: 'Launch & Improve',
+    phase: 'Validation, Indexing & Growth Support',
+    summary: 'We run comprehensive pre-launch audits across SSL, mobile responsiveness, and Core Web Vitals. Upon launch, we submit XML sitemaps to Google Search Console and provide post-launch support.',
+    deliverables: [
+      'Production deployment on secure cloud hosting',
+      'Google Search Console and GA4 configuration',
+      'Source code handover & 30-day post-launch support'
+    ],
+    decisionPoint: 'Live verification and formal project handover.'
+  }
+];
 
 const ProcessPage: React.FC = () => {
-  const steps = [
-    {
-      title: 'Research & Goal Setting',
-      description: 'Every successful web project starts with understanding your unique business landscape. We go beyond basic design requirements to research your business model, target audience, and specific growth goals. \n\nBy focusing on professional web development planning, we identify exactly what your customers are looking for. This foundational step ensures that every design choice we make is aligned with your business objectives—whether that’s increasing enquiries, building brand trust, or improving online visibility.'
-    },
-    {
-      title: 'Structured Website Blueprint',
-      description: 'Before a single line of code is written, we create a strategic blueprint for your site. We plan the layout, content flow, and user journey to ensure ultimate clarity for your visitors. \n\nOur approach to structured web design focuses on organizing content so that customers can find exactly what they need without confusion. We build a logic that search engines understand and users appreciate, ensuring your business content is discoverable and easy to navigate.'
-    },
-    {
-      title: 'Engaging, Business-Focused Design',
-      description: 'We craft a modern website design that does more than just look good—it builds credibility. Your website is often the first interaction a customer has with your brand, so we ensure it exudes professionalism and trust. \n\nCustomized to your brand identity, our designs are mobile-ready and built to guide visitors toward taking action. By combining aesthetics with clear business messaging, we help you make a powerful first impression that encourages customers to engage with confidence.'
-    },
-    {
-      title: 'Development That Performs',
-      description: 'Our development phase brings the design to life with a focus on speed, stability, and performance. We use modern professional web development practices to build a site that is fast, responsive, and works flawlessly on every device. \n\nA fast and responsive business website is critical for keeping visitors on your page. We ensure the underlying code is clean and structured, supporting both user engagement and better visibility on search platforms.'
-    },
-    {
-      title: 'Launch-Ready Website Validation',
-      description: 'We don’t just launch; we validate. Our rigorous testing phase ensures that every link works, every page loads quickly, and the mobile experience is seamless. \n\nBy performing comprehensive performance validation, we fix potential issues before your customers ever see them. This attention to detail ensures you launch with confidence, knowing your professional business presence is robust, error-free, and ready to welcome new opportunities.'
-    },
-    {
-      title: 'Post-Launch Care & Progress',
-      description: 'Your digital journey doesn’t end at launch. We provide ongoing support to ensure your website continues to serve your business effectively as it evolves. \n\nWe help you maintain ongoing clarity and performance by monitoring how users interact with your site. Our goal is to support your business website evolution, keeping your online presence visible, relevant, and aligned with your long-term growth targets.'
-    }
-  ];
-
   return (
-    <div className="py-20 px-6 bg-gradient-to-b from-purple-50 via-pink-50 to-white animate-fadeIn">
-      <div className="container mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-playfair font-bold text-brand-charcoal mb-6">
-            How We Build Websites That Work
+    <div className="bg-white min-h-screen">
+      <SEO
+        title="Our 4-Step Development Process | Luxefiz"
+        description="Discover how Luxefiz plans, designs, builds, and launches high-performance business websites. Transparent milestones, zero guesswork, and predictable outcomes."
+        canonicalUrl="https://www.luxefiz.com/process"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How Luxefiz Builds High-Performance Business Websites",
+            "step": stepsData.map((s, i) => ({
+              "@type": "HowToStep",
+              "position": i + 1,
+              "name": s.title,
+              "text": s.summary
+            }))
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.luxefiz.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Process",
+                "item": "https://www.luxefiz.com/process"
+              }
+            ]
+          }
+        ]}
+      />
+
+      {/* Hero */}
+      <section className="bg-obsidian text-white pt-32 pb-24 px-6 border-b border-white/10">
+        <div className="container mx-auto max-w-5xl text-center">
+          <span className="badge-pill badge-pill-dark mb-4">Structured Methodology</span>
+          <h1 className="text-4xl md:text-6xl font-display font-black mb-6 leading-tight">
+            How We Build Websites That <br className="hidden md:block" />
+            <span className="text-signature-pink">Earn Trust & Drive Enquiries</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            See how we build professional business websites designed to help customers find you online and turn visits into real enquiries. Our process is built on clarity, structure, and measurable results.
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-6">
+            A disciplined 4-step framework engineered to eliminate guesswork, respect project budgets, and deliver measurable business outcomes.
           </p>
         </div>
+      </section>
 
-        {/* Process Steps */}
-        <div className="max-w-5xl mx-auto space-y-8 mb-20">
-          {steps.map((item, index) => (
-            <ProcessStep key={index} step={index + 1} title={item.title} description={item.description} />
+      {/* Steps List */}
+      <section className="py-24 px-6 bg-porcelain">
+        <div className="container mx-auto max-w-5xl space-y-12">
+          {stepsData.map((step) => (
+            <div
+              key={step.number}
+              className="editorial-card p-8 md:p-12 bg-white rounded-3xl border border-gray-100 shadow-sm"
+            >
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-gray-100">
+                <div className="flex items-center gap-4">
+                  <span className="font-mono text-3xl font-black text-luxefiz-purple bg-purple-50 w-16 h-16 rounded-2xl flex items-center justify-center">
+                    {step.number}
+                  </span>
+                  <div>
+                    <span className="text-xs uppercase font-bold text-signature-pink tracking-wider block">
+                      {step.phase}
+                    </span>
+                    <h2 className="text-2xl font-display font-bold text-obsidian">
+                      {step.title}
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-gray-700 leading-relaxed text-sm md:text-base mb-8">
+                {step.summary}
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6 pt-2">
+                <div className="p-5 rounded-2xl bg-gray-50 border border-gray-100">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-obsidian mb-3">Key Deliverables</h3>
+                  <ul className="space-y-2 text-xs text-gray-600">
+                    {step.deliverables.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-emerald-600 font-bold">✓</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-purple-50/50 border border-purple-100">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-luxefiz-purple mb-2">Decision Point</h3>
+                  <p className="text-xs text-gray-700 leading-relaxed">
+                    {step.decisionPoint}
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
+      </section>
 
-        {/* Business Benefits Wrap */}
-        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-lg border border-gray-100 max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-playfair font-bold text-brand-charcoal mb-6">Why Our Process Outcomes Matter</h2>
-          <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            Investing in professional web development with a proven process gives you more than just a website—it gives you a reliable business asset. Our methodical approach ensures consistent communication and structured results, delivering an online presence that supports growth. By focusing on visibility and engagement, we build websites that help customers find you online and do business with confidence.
-          </p>
+      {/* Embedded Enquiry */}
+      <section className="py-20 px-6 bg-white border-t border-gray-200">
+        <div className="container mx-auto max-w-4xl">
+          <ProjectEnquiryForm />
         </div>
-
-        {/* CTA */}
-        <div className="text-center">
-          <h3 className="text-2xl font-bold text-brand-charcoal mb-4">Ready to move forward?</h3>
-          <p className="text-lg text-gray-600 mb-8">
-            Share your business goals so we can design a website built for visibility, clarity, and real customer engagement.
-          </p>
-          <NavLink
-            to="/contact"
-            className="inline-block px-10 py-4 bg-gradient-to-r from-brand-purple to-brand-pink text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-          >
-            Start Your Project
-          </NavLink>
-        </div>
-
-      </div>
+      </section>
     </div>
   );
 };

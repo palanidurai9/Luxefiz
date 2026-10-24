@@ -1,147 +1,213 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { LinkedInIcon } from '../components/icons/LinkedInIcon';
 import { InstagramIcon } from '../components/icons/InstagramIcon';
 import { YouTubeIcon } from '../components/icons/YouTubeIcon';
-
-const ValuePill: React.FC<{ icon: string; text: string }> = ({ icon, text }) => (
-    <div className="flex items-center p-4 rounded-full bg-white shadow-md border border-gray-100 transform hover:scale-105 transition-transform duration-300">
-        <span className="text-2xl md:text-3xl mr-3">{icon}</span>
-        <h4 className="text-base md:text-lg text-gray-800 font-bold">{text}</h4>
-    </div>
-);
+import { ProjectEnquiryForm } from '../components/ProjectEnquiryForm';
 
 const AboutPage: React.FC = () => {
-    return (
-        <div className="animate-fadeIn">
-            <SEO
-                title="About Luxefiz – Professional Web Development Agency Tamil Nadu"
-                description="We are Luxefiz. A creative tech studio blending strategy with digital excellence to build trusted online presence systems for businesses."
-                canonicalUrl="https://www.luxefiz.com/about"
-            />
-            {/* Page Header */}
-            <section className="py-20 px-6 bg-white">
-                <div className="container mx-auto text-center max-w-4xl">
-                    <h1 className="text-4xl md:text-6xl font-playfair font-bold text-brand-charcoal mb-6">
-                        Blending Strategy with Digital Excellence
-                    </h1>
-                    <p className="text-xl text-gray-600">
-                        Luxefiz is a creative tech studio dedicated to building professional business websites and trusted online presence systems. We help businesses be found, be trusted, and be successful in the digital world.
-                    </p>
-                </div>
-            </section>
+  return (
+    <div className="bg-white min-h-screen">
+      <SEO
+        title="About Luxefiz — Premium Digital Growth & Creative Technology Studio"
+        description="Learn about Luxefiz, founded by Palani Durai in Tamil Nadu. We bridge the gap between high-end digital agency quality and accessible pricing for growing businesses."
+        canonicalUrl="https://www.luxefiz.com/about"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About Luxefiz",
+            "url": "https://www.luxefiz.com/about",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "Luxefiz",
+              "founder": {
+                "@type": "Person",
+                "name": "Palani Durai",
+                "jobTitle": "Founder & Principal Developer"
+              },
+              "location": {
+                "@type": "PostalAddress",
+                "addressLocality": "Mannargudi",
+                "addressRegion": "Tamil Nadu",
+                "addressCountry": "IN"
+              }
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.luxefiz.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About",
+                "item": "https://www.luxefiz.com/about"
+              }
+            ]
+          }
+        ]}
+      />
 
-            {/* Our Story & Approach Section */}
-            <section className="py-20 px-6 bg-gray-50">
-                <div className="container mx-auto max-w-5xl">
-
-                    <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl mb-16 [&_h4]:text-center [&_h3]:text-center [&_h3]:text-brand-pink [&_h2]:text-center">
-                        <h2 className="text-3xl font-playfair font-bold text-brand-charcoal mb-2">Our Story</h2>
-                        <h4 className="text-xl text-brand-pink mb-8">
-                            A mission to make businesses visible and valuable online.
-                        </h4>
-                        <div className="text-lg text-gray-700 leading-relaxed space-y-6 max-w-3xl mx-auto text-justify">
-                            <p>
-                                <strong>Luxefiz</strong> began with a clear realization: too many amazing businesses remain hidden because their digital presence doesn't reflect their real-world quality. We saw founders and owners struggling with websites that looked okay but didn't actually help customers find them or trust them.
-                            </p>
-                            <p>
-                                Driven by a passion for technology and a heart for entrepreneurship, we set out to change that. <strong>Our mission is to empower business owners with professional web development that drives real growth.</strong> We don't just build pages; we build digital assets that work for you 24/7. From small startups in Tamil Nadu to growing brands across India, we help you become the discoverable, trusted choice in your market.
-                            </p>
-                            <h4>
-                                <strong>Your growth is our benchmark for success.</strong>
-                            </h4>
-                            <h3>
-                                <strong>Smart. Structured. Successful.</strong>
-                            </h3>
-                        </div>
-                    </div>
-
-                    <div className="text-center my-16">
-                        <p className="text-3xl md:text-4xl text-brand-charcoal font-semibold font-playfair italic p-6 bg-white rounded-lg border-l-8 border-r-8 border-brand-purple shadow-lg inline-block">
-                            Marketing with Class, Easy on Cash!
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-5 gap-12 items-center mb-20">
-                        <div className="md:col-span-3 text-lg text-gray-700 leading-relaxed space-y-6">
-                            <h3 className="text-3xl font-playfair font-bold text-brand-purple mb-4 ">Our Approach</h3>
-                            <p>
-                                At Luxefiz, we believe in a "user's first" philosophy. We don't chase fleeting trends; we chase clarity, performance, and structure.
-                            </p>
-                            <p>
-                                We approach every project by first understanding the search intent of your customers. What are they looking for? What questions do they have? We then build a search-ready structure that answers these needs directly. By focusing on clean, professional business website standards, we ensure your site is not just a digital brochure, but a tool for discovery.
-                            </p>
-                            <p>
-                                We prioritize mobile-readiness and speed because we know these are the foundations of trust.
-                            </p>
-                            <p>
-                                <strong>We focus on business outcomes over bells and whistles, delivering systems that help you grow.</strong>
-                            </p>
-                        </div>
-                        <div className="md:col-span-2 p-8 bg-purple-50 rounded-2xl shadow-lg border border-purple-100 h-full flex flex-col justify-center">
-                            <h3 className="text-3xl font-playfair font-bold text-brand-charcoal mb-6 text-center">Our Values</h3>
-                            <p className="text-lg text-justify text-gray-700">
-                                We stand for <strong>trust, precision, and long-term value</strong>. We believe that a professional and trusted partner is what every business owner deserves. Our work is defined by transparency and a relentless focus on quality. We are committed to building modern and structured websites that stand the test of time and technology changes.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 className="text-3xl font-playfair font-bold text-brand-charcoal mb-8 text-center">Core Principles</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <ValuePill icon="🔍" text="Visibility First" />
-                            <ValuePill icon="🤝" text="Trusted Partnership" />
-                            <ValuePill icon="⚡" text="Performance Focused" />
-                            <ValuePill icon="📈" text="Sustainable Growth" />
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            {/* Founder Section */}
-            <div className="py-20 px-6 bg-white">
-                <div className="container mx-auto">
-                    <section className="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <img
-                                src="/image/meeee.png"
-                                alt="Palani Durai (RPD), Founder of Luxefiz"
-                                className="rounded-3xl shadow-2xl w-full h-auto object-cover"
-                            />
-                        </div>
-                        <div>
-                            <h2 className="text-4xl font-playfair font-bold mb-4">Meet Our Founder</h2>
-                            <h3 className="text-4xl text-brand-purple font-semibold mb-6">Palani Durai (RPD)</h3>
-                            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                                A student entrepreneur with a passion for technology, design, and brand strategy — Palani Durai founded Luxefiz from Tamil Nadu with <b>one vision in mind: to make premium digital services accessible for every business.</b>
-                            </p>
-                            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                                With a background in Information Technology, he identified a gap between high-end agencies and ambitious startups who needed the same quality — but couldn’t afford the traditional agency pricing.
-                            </p>
-                            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                                His mission is simple:
-                                <br></br>
-                                <b>Democratize world-class design and digital growth.</b>
-                            </p>
-                            {/* Social Media Links for Founder */}
-                            <div className="mt-6 flex space-x-4">
-                                <a href="https://www.linkedin.com/in/palani-durai-5aa942284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-purple transition-colors duration-300">
-                                    <LinkedInIcon />
-                                </a>
-                                <a href="https://instagram.com/rp_duraii__" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-pink transition-colors duration-300">
-                                    <InstagramIcon />
-                                </a>
-                                <a href="https://www.youtube.com/@rp_durai" aria-label="YouTube" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand-purple transition-colors duration-300">
-                                    <YouTubeIcon />
-                                </a>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
+      {/* Hero */}
+      <section className="bg-obsidian text-white pt-32 pb-24 px-6 border-b border-white/10">
+        <div className="container mx-auto max-w-5xl text-center">
+          <span className="badge-pill badge-pill-dark mb-4">Our Story & Purpose</span>
+          <h1 className="text-4xl md:text-6xl font-display font-black mb-6 leading-tight">
+            Classy Digital Experiences, <br className="hidden md:block" />
+            <span className="text-signature-pink">Without Big Agency Stress</span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
+            Luxefiz was founded to solve a glaring problem: too many high-potential businesses look mediocre online simply because enterprise agencies charge unrealistic prices. We exist to fix that.
+          </p>
+          <div className="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-signature-pink font-display">
+            "Marketing with Class, Easy on Cash!"
+          </div>
         </div>
-    );
+      </section>
+
+      {/* Mission & Philosophy */}
+      <section className="py-20 px-6 bg-white">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <span className="badge-pill badge-pill-purple">Why We Started</span>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-obsidian">
+                We Turn Your Business Into a Trusted Digital Brand
+              </h2>
+              <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+                <p>
+                  In every town and commercial district across Tamil Nadu—from industrial centers in Coimbatore to local enterprises in Mannargudi—we saw skilled founders with phenomenal offline products getting overlooked online because their websites were slow, template-driven, and poorly structured.
+                </p>
+                <p>
+                  Most agencies hand clients a pre-made WordPress theme that breaks within a year. We approach web development as craft: hand-coded components, tailored typography, lightning-fast rendering, and search discovery built into the very architecture of the website.
+                </p>
+                <p>
+                  We don't inflate team counts or fabricate overseas offices. We are proud of our Tamil Nadu roots and deliver world-class digital work through direct, honest communication.
+                </p>
+              </div>
+            </div>
+
+            <div className="editorial-dark-card p-8 md:p-10 space-y-6">
+              <h3 className="text-2xl font-display font-bold text-white">Our 4 Guiding Principles</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-signature-pink text-obsidian font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+                  <div>
+                    <h4 className="font-bold text-white text-sm">Clarity Over Jargon</h4>
+                    <p className="text-xs text-gray-400">We explain technology in practical business terms. No confusing buzzwords.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-signature-pink text-obsidian font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+                  <div>
+                    <h4 className="font-bold text-white text-sm">Speed as a Feature</h4>
+                    <p className="text-xs text-gray-400">Every extra millisecond costs business. We build for sub-second Core Web Vitals.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-signature-pink text-obsidian font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+                  <div>
+                    <h4 className="font-bold text-white text-sm">Truthful Search Visibility</h4>
+                    <p className="text-xs text-gray-400">No black-hat ranking tricks. Only clean Schema markup and legitimate commercial relevance.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-signature-pink text-obsidian font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+                  <div>
+                    <h4 className="font-bold text-white text-sm">Transparent Scope</h4>
+                    <p className="text-xs text-gray-400">Milestone pricing with zero hidden maintenance traps or builder lock-ins.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder Section */}
+      <section className="py-20 px-6 bg-porcelain border-t border-gray-200">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid md:grid-cols-12 gap-12 items-center">
+            <div className="md:col-span-5">
+              <div className="rounded-3xl overflow-hidden shadow-card border border-gray-200 aspect-[3/4] bg-gray-100">
+                <img
+                  src="/image/meeee.png"
+                  alt="Palani Durai (RPD) - Founder of Luxefiz"
+                  className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div className="md:col-span-7 space-y-6">
+              <span className="badge-pill badge-pill-purple">Leadership</span>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-obsidian">
+                Meet the Founder: <br />
+                <span className="text-luxefiz-purple">Palani Durai (RPD)</span>
+              </h2>
+              <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+                <p>
+                  Palani Durai is an entrepreneur and principal engineer with an academic background in Information Technology. Driven by a deep passion for clean web systems and commercial brand strategy, he founded Luxefiz from Tamil Nadu to democratize enterprise-grade web development for growing businesses.
+                </p>
+                <p>
+                  Rather than functioning as a detached agency executive, Palani is directly involved in architecture design, client scoping, and code quality across every Luxefiz project.
+                </p>
+                <p className="font-semibold text-obsidian">
+                  "A website isn't an artistic ornament. It is your business's 24/7 digital representative. When it loads instantly, looks authoritative, and communicates clearly, it opens doors you didn't even know were closed."
+                </p>
+              </div>
+
+              {/* Social Channels */}
+              <div className="pt-2 flex items-center space-x-3 text-luxefiz-purple">
+                <a
+                  href="https://www.linkedin.com/in/palani-durai-5aa942284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center hover:bg-luxefiz-purple hover:text-white transition"
+                  aria-label="Founder LinkedIn"
+                >
+                  <LinkedInIcon />
+                </a>
+                <a
+                  href="https://instagram.com/rp_duraii__"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center hover:bg-signature-pink hover:text-white transition"
+                  aria-label="Founder Instagram"
+                >
+                  <InstagramIcon />
+                </a>
+                <a
+                  href="https://www.youtube.com/@rp_durai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center hover:bg-luxefiz-purple hover:text-white transition"
+                  aria-label="Founder YouTube"
+                >
+                  <YouTubeIcon />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Embedded Enquiry */}
+      <section className="py-20 px-6 bg-white border-t border-gray-200">
+        <div className="container mx-auto max-w-4xl">
+          <ProjectEnquiryForm />
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default AboutPage;
