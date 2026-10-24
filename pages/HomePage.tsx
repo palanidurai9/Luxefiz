@@ -66,30 +66,30 @@ const servicesOverview: ServiceCardProps[] = [
 
 const selectedProjects = [
   {
-    title: 'SVET Education Consultancy',
-    industry: 'Education & Overseas Career',
-    challenge: 'Generic online presence obscured trust for parents and made complex admissions difficult to navigate.',
-    solution: 'Built a structured, responsive multi-page educational portal with dedicated student/parent paths and direct WhatsApp inquiry funnels.',
-    outcome: 'Increased qualified student admissions enquiries by 40% in the first quarter post-launch.',
-    imageUrl: '/image/SVET.png',
+    title: 'Leakzen Waterproofing',
+    industry: 'Waterproofing & Construction Maintenance',
+    challenge: 'Homeowners and property managers in Coimbatore and Tamil Nadu needed an immediate, high-trust way to book thermal scanner inspections and permanent PU grouting treatments.',
+    solution: 'Engineered a high-conversion, speed-optimized website with thermal inspection proofs, 10-year warranty badges, and direct 1-tap WhatsApp booking.',
+    outcome: 'Streamlined qualified inspection bookings across Coimbatore and regional Tamil Nadu, establishing Leakzen as the benchmark in leak-free solutions.',
+    imageUrl: '/image/leakzen.png',
     link: '/work'
   },
   {
-    title: 'PK Das Hospital & University',
-    industry: 'Healthcare & Higher Education',
-    challenge: 'Sluggish performance on mobile networks and disorganized departmental layouts frustrated prospective students and patients.',
-    solution: 'Engineered an accessibility-focused portal with intuitive doctor schedules and clean course syllabi optimized for 3G/4G networks.',
-    outcome: 'Reduced bounce rate by 65% and significantly improved mobile delivery across regional visitors.',
-    imageUrl: '/image/pkdas.png',
+    title: 'Urban Fix Services Pte. Ltd.',
+    industry: 'Commercial Facilities & Engineering (Singapore)',
+    challenge: 'Commercial facility managers in Singapore require rigorous compliance, verified safety standards (bizSAFE 3), and comprehensive capability proofs before awarding service contracts.',
+    solution: 'Built an authoritative corporate digital portal showcasing bizSAFE 3 certification, structured service categories (M&E, plumbing, carpentry, water tank cleaning), and streamlined assessment workflows.',
+    outcome: 'Elevated corporate authority in Singapore’s competitive facility support market, delivering an international enterprise inquiry gateway.',
+    imageUrl: '/image/urbanfix.png',
     link: '/work'
   },
   {
-    title: 'Skrsta Fashion',
-    industry: 'E-commerce & Retail Apparel',
-    challenge: 'Relied exclusively on Instagram DMs, creating customer service bottlenecks and manual payment tracking errors.',
-    solution: 'Launched a clean, visual-first e-commerce experience with seamless 1-click UPI checkout and direct catalog management.',
-    outcome: 'Successfully handled 500+ orders during launch week and built an owned digital asset independent of social algorithms.',
-    imageUrl: '/image/skrsta.png',
+    title: "Rathna's Boutique",
+    industry: 'Fashion & Ethnic Retail (Mannargudi)',
+    challenge: 'A premier boutique in Mannargudi needed to expand beyond local foot traffic and manual Instagram DMs into an organized digital catalog for festive lookbooks and custom sizing.',
+    solution: 'Crafted an exquisite soft-luxury visual storefront with festive lookbook showcases, curated ethnic wear categories, and frictionless "Order on WhatsApp" conversational commerce triggers.',
+    outcome: 'Successfully digitized Mannargudi’s luxury boutique shopping experience, driving direct WhatsApp orders across the Delta region and beyond.',
+    imageUrl: '/image/rathnas.png',
     link: '/work'
   }
 ];
@@ -251,18 +251,14 @@ const HomePage: React.FC = () => {
                     <div className="pt-5 space-y-4">
                       <div className="rounded-xl overflow-hidden border border-white/10 aspect-[16/10] bg-black/40 relative group">
                         <img
-                          src="/image/hero-mockup.png"
-                          alt="Luxefiz Digital Architecture Interface"
+                          src="/image/leakzen.png"
+                          alt="Leakzen Waterproofing Client Platform by Luxefiz"
                           className="w-full h-full object-cover object-top"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src = '/image/SVET.png';
-                          }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent opacity-60"></div>
                         <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center text-xs text-white">
-                          <span className="font-bold">SVET Educational Portal</span>
-                          <span className="text-signature-pink font-mono text-[11px]">+40% Inquiries</span>
+                          <span className="font-bold">Leakzen Waterproofing Platform</span>
+                          <span className="text-signature-pink font-mono text-[11px]">Live Client Platform</span>
                         </div>
                       </div>
 
@@ -441,7 +437,7 @@ const HomePage: React.FC = () => {
                       src={project.imageUrl}
                       alt={`${project.title} website preview`}
                       className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
+                      loading="eager"
                     />
                     <div className="absolute top-3 left-3">
                       <span className="badge-pill badge-pill-dark text-[10px]">

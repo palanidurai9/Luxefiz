@@ -17,48 +17,37 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'SVET Education Consultancy',
-    tagline: 'Multi-Page Educational Admissions & Overseas Study Portal',
-    industry: 'Education & Overseas Career',
+    title: 'Leakzen Waterproofing',
+    tagline: 'Tamil Nadu’s Most Trusted Waterproofing Experts Platform',
+    industry: 'Waterproofing & Construction Maintenance',
     status: 'Live Client Platform',
-    problem: 'SVET struggled with an outdated, generic online presence that failed to convey trust to parents and obscured complex international admission processes.',
-    solution: 'Engineered a structured, responsive educational portal featuring dedicated student vs parent user pathways, WhatsApp enquiry triggers, and clear country admission matrices.',
-    outcome: 'Increased qualified student admissions enquiries by 40% in the first quarter post-launch and solidified regional brand credibility.',
-    imageUrl: '/image/SVET.png',
-    tech: ['React', 'Semantic HTML5', 'WhatsApp API', 'Local SEO']
+    problem: 'Homeowners and commercial property managers in Coimbatore and Tamil Nadu dealing with roof leaks and wall dampness needed an immediate, high-trust way to book inspections and understand advanced technical treatments like PU grouting.',
+    solution: 'Designed and engineered a high-conversion, speed-optimized website with thermal scanner inspection badges, 10-year warranty proof, and direct 1-tap "Book Your Free Inspection" & WhatsApp booking triggers.',
+    outcome: 'Significantly streamlined qualified inspection bookings across Coimbatore and regional Tamil Nadu, positioning Leakzen as the undisputed benchmark in permanent leak-free solutions.',
+    imageUrl: '/image/leakzen.png',
+    tech: ['React', 'High-Speed Mobile UX', 'Local SEO Architecture', 'Instant WhatsApp Funnel']
   },
   {
-    title: 'PK Das Hospital & University System',
-    tagline: 'Institutional Healthcare & Academic Portal',
-    industry: 'Healthcare & Higher Education',
-    status: 'Client Web Platform',
-    problem: 'Their previous site was sluggish on mobile networks, with fragmented departmental information that frustrated prospective students and patients seeking doctor schedules.',
-    solution: 'Designed an accessibility-first institutional portal with streamlined doctor directories, clear course syllabi, and fast loading optimized for rural 3G/4G networks.',
-    outcome: 'Reduced mobile bounce rates by 65% and substantially improved page delivery speeds across regional Tamil Nadu and Kerala visitors.',
-    imageUrl: '/image/pkdas.png',
-    tech: ['High-Performance Architecture', 'Doctor Directory', 'Core Web Vitals']
+    title: 'Urban Fix Services Pte. Ltd.',
+    tagline: 'Singapore’s Trusted Building Maintenance & Facilities Support Partner',
+    industry: 'Commercial Facilities Management & Engineering',
+    status: 'Live Client Platform',
+    problem: 'Commercial facility managers in Singapore require rigorous compliance, verified safety standards (bizSAFE 3), and comprehensive capability proofs before awarding building maintenance and M&E service contracts.',
+    solution: 'Engineered an authoritative, corporate digital portal showcasing bizSAFE 3 certification, structured service categories (M&E, plumbing, carpentry, water tank cleaning), and streamlined "Request Site Assessment" workflows.',
+    outcome: 'Elevated Urban Fix’s corporate authority in Singapore’s competitive facility support market, providing international property managers with an instant, credible verification and contact gateway.',
+    imageUrl: '/image/urbanfix.png',
+    tech: ['Corporate B2B Architecture', 'bizSAFE 3 Layout', 'Enterprise Inquiry Funnel', 'High-Performance Cloud']
   },
   {
-    title: 'Skrsta Fashion',
-    tagline: 'Visual-First D2C Fashion E-Commerce Experience',
-    industry: 'E-commerce & Retail Apparel',
-    status: 'Client Web Platform',
-    problem: 'The brand relied exclusively on Instagram DMs to take orders, resulting in chaotic customer service, lost sales, and manual UPI reconciliation errors.',
-    solution: 'Built a sleek, mobile-first e-commerce storefront with intuitive catalog browsing, frictionless 1-click checkout, and instant digital payment verification.',
-    outcome: 'Successfully processed over 500 orders during launch week and established an owned digital platform independent of social algorithms.',
-    imageUrl: '/image/skrsta.png',
-    tech: ['E-Commerce Store', 'UPI Payment Integration', 'Mobile Checkout']
-  },
-  {
-    title: 'SPL Healthcare SaaS',
-    tagline: 'B2B Healthcare Software Product Website',
-    industry: 'B2B Software & Healthcare Tech',
-    status: 'Custom Client Build',
-    problem: 'Complex software capabilities were confusing hospital administrators. Prospective buyers could not quickly grasp what problems the software solved.',
-    solution: 'Restructured the value proposition into clear feature-to-benefit modules with interactive product screenshots, feature comparison matrices, and demo inquiry capture.',
-    outcome: 'Shortened sales qualification cycles by delivering pre-informed hospital decision-makers directly to sales conversations.',
-    imageUrl: '/image/SPLSaas.png',
-    tech: ['B2B Lead Architecture', 'Interactive Walkthrough', 'Schema Markup']
+    title: "Rathna's Boutique",
+    tagline: 'Handcrafted Women’s Fashion & Ethnic Wear Boutique in Mannargudi',
+    industry: 'Women’s Fashion & Ethnic Retail',
+    status: 'Live Client Platform',
+    problem: 'A premier boutique in Mannargudi needed to expand beyond local foot traffic and manual Instagram DMs into an organized digital catalog that lets customers browse new festive arrivals and order with custom sizing guidance.',
+    solution: 'Crafted an exquisite soft-luxury visual storefront with festive lookbook showcases, curated collection categories (ethnic wear, kurtis, silk sarees), and frictionless "Order on WhatsApp" conversational commerce triggers.',
+    outcome: 'Successfully digitized Mannargudi’s luxury boutique shopping experience, driving direct WhatsApp orders from customers across the Delta region and beyond.',
+    imageUrl: '/image/rathnas.png',
+    tech: ['Luxury Retail UI/UX', 'Conversational Commerce', 'WhatsApp Ordering System', 'Mobile Lookbook']
   }
 ];
 
@@ -134,7 +123,7 @@ const PortfolioPage: React.FC = () => {
                   src={project.imageUrl}
                   alt={`${project.title} preview screenshot`}
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
+                  loading="eager"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
